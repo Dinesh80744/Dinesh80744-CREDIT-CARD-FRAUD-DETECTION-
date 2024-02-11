@@ -1,33 +1,19 @@
-# CREDIT-CARD-FRAUD-DETECTION
+Data Download and Extraction:
 
-This Python script seems to be a comprehensive example of data import, preprocessing, and building a decision tree model for fraud detection. Here's a breakdown of its functionality:
+1.It downloads a dataset from a specified URL (DATA_SOURCE_MAPPING) using urllib.
+-The downloaded file is then extracted using either ZipFile or tarfile module, depending on the file type.
+-Data Preprocessing:
 
-1. **Data Import and Preprocessing**:
-   - The script begins by importing necessary libraries and setting up environment variables.
-   - It then downloads data from a specified source (fraud-detection) and unzips/tars it into the '/kaggle/input' directory.
-   - The downloaded dataset is then read into a pandas DataFrame and initial preprocessing steps are performed.
-   - Missing values in numeric columns are imputed, assuming certain strategies such as filling with median or 0 for binary variables.
-   - Factorization (label encoding) is applied to categorical variables.
+2.After downloading and extracting the data, it loads a CSV file fraudTest.csv into a pandas DataFrame.
+-It performs initial data preprocessing steps such as checking for missing values and imputing them with appropriate strategies.
+-Categorical variables are factorized to convert them into numerical format for modeling.
 
-2. **Decision Tree Model Building**:
-   - The dataset is split into features (X) and target variable (y).
-   - Train-test split is performed with a 70-30 ratio.
-   - A decision tree classifier is instantiated and trained on the training data.
-   - Predictions are made on the test data.
-   - Accuracy and classification report (including precision, recall, F1-score) are computed and printed.
+3.Model Training and Evaluation:
+-It splits the dataset into features (X) and the target variable (y).
+-Utilizes the train_test_split function from sklearn to split the data into training and testing sets.
+-Initializes a DecisionTreeClassifier from sklearn and fits it to the training data.
+-The trained model is used to predict the target variable for the test data.
+-Model performance is evaluated using metrics such as accuracy score and classification report.
 
-
-3. **GitHub README Description**:
-   - For the GitHub README file, you can structure the description as follows:
-     - Introduction: Briefly introduce the purpose of the script (fraud detection) and its components.
-     - Data Import and Preprocessing: Describe how the data is fetched, uncompressed, and preprocessed.
-     - Model Building: Explain how the decision tree model is constructed, trained, and evaluated.
-     - Usage: Mention any specific instructions or dependencies for running the script.
-     - Example Output: Provide an example of the output or results obtained from running the script.
-     - Credits and License: Give credit to the original author or data source, and specify the license if applicable.
-
-By following this structure, users will have a clear understanding of what the script does and how to use it for their own purposes.
-
-
-
-<img width="784" alt="Screenshot 2024-02-11 at 9 58 11 PM" src="https://github.com/hannu-shaik/CREDIT-CARD-FRAUD-DETECTION/assets/140539636/2d5d017b-f62c-4f03-85cf-cbb80b61b4e2">
+4.Printing Results:
+Finally, it prints out the accuracy of the model and the classification report, which provides precision, recall, and F1-score for each class.
